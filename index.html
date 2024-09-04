@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lets Play Snake Water Gun </title>
+</head>
+
+<body>
+    <script>
+        let user = prompt("Enter S , W or G");
+        let system = Math.floor(Math.random()*3) ;
+        let system2 = ['S', 'W', 'G'][system];
+        const result = ((system2, user) => {
+            if (system2 === user) {
+                return "Tie"
+            }
+            else if (system2 === "S" && user === "W") {
+                return "System wins"
+            }
+            else if (system2 === "S" && user === "G") {
+                return "user wins"
+            }
+            else if (system2 === "W" && user === "S") {
+                return "user wins"
+            }
+            else if (system2 === "W" && user === "G") {
+                return "system2 wins"
+            }
+            else if (system2 === "G" && user === "S") {
+                return "System wins"
+            }
+            else if (system2 === "G" && user === "W") {
+                return "System wins"
+            }
+        })
+        let winner = result(system2, user)
+        document.write(`user :${user} System2:${system2} The result is:${winner}`)
+
+
+    </script>
+</body>
+
+</html>
